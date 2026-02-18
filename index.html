@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bate-Controle Elite 2027 | A Gestão dos Mestres</title>
+    <title>Bate-Controle Elite 2027 | O Sistema dos Mestres</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     
@@ -26,68 +26,68 @@
         .hero {
             background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
             color: white;
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
             border-bottom: 8px solid var(--primary);
         }
 
-        .hero h1 { font-size: 2.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
         .hero h1 span { color: var(--primary); }
-        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 35px; }
+        .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; margin: 0 auto 35px; font-weight: 400; }
 
-        /* --- ESTILO DO VÍDEO YOUTUBE --- */
+        /* --- VIDEO --- */
         .video-container {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 40px;
             position: relative;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
+            padding-bottom: 42.25%; /* Ajustado para vídeo de venda */
             height: 0;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            border: 4px solid rgba(255, 107, 0, 0.2);
+            box-shadow: 0 0 40px rgba(255, 107, 0, 0.3);
+            border: 4px solid var(--primary);
             background: #000;
         }
 
         .video-container iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
         }
 
-        /* --- SEÇÃO DE DORES --- */
-        .pain-section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
-        .pain-section h2 { font-size: 1.8rem; margin-bottom: 40px; font-weight: 800; }
+        /* --- SEÇÃO DE DORES (AGITAÇÃO DO PROBLEMA) --- */
+        .pain-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .pain-section h2 { font-size: 2rem; margin-bottom: 15px; font-weight: 900; text-transform: uppercase; }
+        .pain-section .subtitle { color: var(--danger); font-weight: 700; margin-bottom: 50px; display: block; }
         
-        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .pain-card { background: #fff; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); border-left: 6px solid var(--danger); text-align: left; }
-        .pain-card h4 { color: var(--danger); margin-bottom: 10px; font-weight: 700; }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .pain-card { background: #fff; padding: 35px; border-radius: var(--radius); box-shadow: var(--shadow); border-bottom: 6px solid var(--danger); text-align: left; }
+        .pain-card h4 { color: #1a1a1a; margin-bottom: 10px; font-weight: 900; font-size: 1.2rem; }
 
-        /* --- SEÇÃO DE BENEFÍCIOS --- */
-        .benefits { background: #fff; padding: 80px 20px; }
+        /* --- BENEFÍCIOS (A SOLUÇÃO) --- */
+        .benefits { background: #1a1a1a; color: #fff; padding: 80px 20px; }
         .benefits-container { max-width: 1000px; margin: 0 auto; }
-        .benefit-item { display: flex; align-items: center; margin-bottom: 40px; gap: 20px; }
-        .benefit-icon { background: var(--primary); color: white; min-width: 60px; height: 60px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-        .benefit-text h3 { font-weight: 800; margin-bottom: 5px; }
+        .benefit-item { display: flex; align-items: center; margin-bottom: 50px; gap: 25px; }
+        .benefit-icon { background: var(--primary); color: white; min-width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+        .benefit-text h3 { font-weight: 900; margin-bottom: 8px; color: var(--primary); text-transform: uppercase; }
+        .benefit-text p { opacity: 0.8; font-size: 1.1rem; }
 
         /* --- PREÇO E CTA --- */
-        .cta-section { padding: 80px 20px; text-align: center; }
+        .cta-section { padding: 100px 20px; text-align: center; background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); }
         .offer-box { 
-            background: #fff; max-width: 450px; margin: 0 auto; padding: 50px 30px; 
-            border-radius: 40px; border: 3px solid var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: #fff; max-width: 500px; margin: 0 auto; padding: 60px 40px; 
+            border-radius: 40px; border: 4px solid var(--primary); box-shadow: 0 30px 60px rgba(0,0,0,0.2);
             position: relative;
         }
-        .offer-box h2 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
-        .price { font-size: 4rem; font-weight: 900; color: var(--primary-dark); margin: 20px 0; }
-        .price small { font-size: 1.2rem; color: #888; }
+        .badge { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--success); color: white; padding: 10px 25px; border-radius: 50px; font-weight: 900; font-size: 0.9rem; letter-spacing: 1px; }
+        
+        .price-old { text-decoration: line-through; color: #888; font-size: 1.2rem; }
+        .price { font-size: 4.5rem; font-weight: 900; color: #1a1a1a; margin: 10px 0; line-height: 1; }
+        .price small { font-size: 1.2rem; color: #555; }
 
         .btn-elite {
-            display: inline-block; width: 100%; padding: 22px; background: var(--primary); 
+            display: inline-block; width: 100%; padding: 25px; background: var(--primary); 
             color: white; text-decoration: none; border-radius: 20px; font-weight: 900; 
-            font-size: 1.3rem; box-shadow: 0 8px 0 #d35400; transition: 0.2s;
+            font-size: 1.5rem; box-shadow: 0 8px 0 #d35400; transition: 0.2s; text-transform: uppercase;
         }
         .btn-elite:hover { transform: translateY(-3px); box-shadow: 0 11px 0 #d35400; }
         .btn-elite:active { transform: translateY(5px); box-shadow: 0 2px 0 #d35400; }
@@ -95,26 +95,28 @@
         /* --- WHATSAPP --- */
         .zap-btn {
             position: fixed; bottom: 30px; right: 30px; background: #25d366; 
-            color: white; padding: 15px 25px; border-radius: 50px; font-weight: 800;
-            text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.15); z-index: 100;
+            color: white; padding: 18px 30px; border-radius: 50px; font-weight: 900;
+            text-decoration: none; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 100;
+            display: flex; align-items: center; gap: 10px;
         }
 
         @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
+            .hero h1 { font-size: 2rem; }
             .benefit-item { flex-direction: column; text-align: center; }
-            .video-container { margin: 0 10px 35px; border-radius: 15px; }
+            .video-container { margin: 0 10px 35px; border-radius: 15px; padding-bottom: 56%; }
+            .price { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1>Pare de Carregar a <span>Turma nas Costas!</span> 🤡</h1>
-        <p>Você é dono de turma? Transforme sua gestão com o Bate-Controle Elite 2027.</p>
+        <h1>Cansado de ser o <span>"Fiador"</span> da sua própria Turma? 🤡</h1>
+        <p>Pare de perder noites de sono cobrando caloteiro. Assuma o controle profissional da sua saída em 2027.</p>
         
         <div class="video-container">
             <iframe 
-                src="https://www.youtube.com/embed/PZV4VBwcK_8" 
+                src="https://www.youtube.com/embed/pziJCAEe_-s" 
                 title="Bate-Controle Elite 2027" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -122,48 +124,55 @@
             </iframe>
         </div>
 
-        <a href="https://caioprogramador10-spec.github.io/BATE-CONTROLE/" class="btn-elite">QUERO TESTAR GRÁTIS</a>
+        <a href="https://caioprogramador10-spec.github.io/BATE-CONTROLE/" class="btn-elite">QUERO O CONTROLE AGORA</a>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #00d576; font-weight: 800;">🔥 TESTE GRÁTIS POR 15 DIAS - RISCO ZERO</p>
     </section>
 
     <section class="pain-section">
-        <h2>Você ainda passa por isso?</h2>
+        <h2>O Carnaval chega, mas o dinheiro não?</h2>
+        <span class="subtitle">Gerir uma turma no papel ou no "boca a boca" é pedir para ter prejuízo.</span>
+        
         <div class="pain-grid">
             <div class="pain-card">
-                <h4>❌ Prejuízo no Bolso</h4>
-                <p>O componente some, não paga a fantasia e quem cobre o rombo no final é você.</p>
+                <h4>🛑 Calote Silencioso</h4>
+                <p>O componente "esquece" de pagar, você esquece de cobrar e, no final, o rombo da fantasia sai do seu bolso.</p>
             </div>
             <div class="pain-card">
-                <h4>❌ Cobrança Chata</h4>
-                <p>Ter que ficar implorando pelo PIX no privado de todo mundo todo santo dia.</p>
+                <h4>📢 Desgaste Total</h4>
+                <p>Ter que ser o "vilão" no grupo do WhatsApp todo dia implorando pelo PIX da mensalidade.</p>
             </div>
             <div class="pain-card">
-                <h4>❌ Falta de Respeito</h4>
-                <p>Ninguém sabe para onde o dinheiro vai e ainda questionam sua honestidade.</p>
+                <h4>📉 Falta de Moral</h4>
+                <p>Sem prestação de contas clara, a turma perde a confiança e ninguém mais quer levar a sério.</p>
             </div>
         </div>
     </section>
 
     <section class="benefits">
         <div class="benefits-container">
+            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 60px; font-weight: 900;">POR QUE OS MESTRES USAM O <span style="color:var(--primary)">BATE-CONTROLE?</span></h2>
+            
             <div class="benefit-item">
-                <div class="benefit-icon">🛡️</div>
+                <div class="benefit-icon">👑</div>
                 <div class="benefit-text">
-                    <h3>Paz de Espírito</h3>
-                    <p>Saiba exatamente quem deve e quanto deve. O sistema faz o trabalho sujo por você.</p>
+                    <h3>Autoridade Máxima</h3>
+                    <p>Mostre que sua turma é organizada. Gere PDFs profissionais de gastos e pagamentos com um clique. O dono da turma manda, o sistema organiza.</p>
                 </div>
             </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">💸</div>
+                <div class="benefit-text">
+                    <h3>Recuperação de Dinheiro</h3>
+                    <p>Nossa função de "Cobrança Automática" gera a mensagem perfeita para o WhatsApp do devedor. Você cobra sem passar vergonha e sem criar climão.</p>
+                </div>
+            </div>
+            
             <div class="benefit-item">
                 <div class="benefit-icon">📊</div>
                 <div class="benefit-text">
-                    <h3>Transparência de Elite</h3>
-                    <p>Gere PDFs profissionais de prestação de contas e mostre que a turma é séria.</p>
-                </div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon">⚡</div>
-                <div class="benefit-text">
-                    <h3>Cobrança em 1 Clique</h3>
-                    <p>Mande a mensagem pronta para o Zap do devedor. Sem estresse, sem climão.</p>
+                    <h3>Visão de Águia</h3>
+                    <p>Saiba instantaneamente quanto a turma já arrecadou e quanto falta para fechar a conta do material. Chega de surpresas na quarta-feira de cinzas.</p>
                 </div>
             </div>
         </div>
@@ -171,23 +180,37 @@
 
     <section class="cta-section">
         <div class="offer-box">
-            <h2>PLANO ELITE 2027</h2>
-            <div class="price"><small>R$</small> 79,90 <small>/mês</small></div>
-            <ul style="text-align: left; list-style: none; margin-bottom: 30px; font-weight: 600;">
-                <li>✅ Cadastro Ilimitado</li>
-                <li>✅ Divisão de Custos Extras</li>
-                <li>✅ Gerador de PDF</li>
-                <li>✅ 15 Dias Grátis</li>
+            <div class="badge">OFERTA DE LANÇAMENTO 2027</div>
+            <h2>PLANO ELITE</h2>
+            <p>Acesso total a todas as ferramentas</p>
+            
+            <div style="margin: 20px 0;">
+                <span class="price-old">De R$ 119,90</span>
+                <div class="price"><small>R$</small> 79,90</div>
+                <p style="font-weight: 700; color: var(--success);">MENSAL</p>
+            </div>
+
+            <ul style="text-align: left; list-style: none; margin-bottom: 35px; font-weight: 600; font-size: 1.1rem;">
+                <li>✅ Cadastro Ilimitado de Componentes</li>
+                <li>✅ Relatórios em PDF Profissionais</li>
+                <li>✅ Sistema de Cobrança em 1 Clique</li>
+                <li>✅ Suporte Prioritário via WhatsApp</li>
+                <li>✅ <strong>Garantia Total: 15 Dias Grátis</strong></li>
             </ul>
+
             <a href="https://caioprogramador10-spec.github.io/BATE-CONTROLE/" class="btn-elite">GARANTIR MINHA TURMA</a>
+            <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.7;">⚠️ Vagas limitadas para o suporte VIP direto com o desenvolvedor.</p>
         </div>
     </section>
 
-    <footer style="padding: 40px; text-align: center; opacity: 0.5; font-size: 0.8rem;">
-        Bate-Controle Elite 2027 - Nilópolis/RJ.
+    <footer style="padding: 60px 20px; text-align: center; background: #1a1a1a; color: white;">
+        <p style="font-weight: 800; color: var(--primary);">BATE-CONTROLE ELITE 2027</p>
+        <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 10px;">Desenvolvido para quem entende de Carnaval e Gestão. Nilópolis, RJ.</p>
     </footer>
 
-    <a href="https://api.whatsapp.com/send?phone=5521985072328&text=Quero ser Elite!" class="zap-btn">Dúvidas? Fale com o Caio</a>
+    <a href="https://api.whatsapp.com/send?phone=5521985072328&text=Caio, quero o Bate-Controle Elite com desconto!" class="zap-btn">
+        <span>Fale conosco agora</span>
+    </a>
 
 </body>
 </html>
