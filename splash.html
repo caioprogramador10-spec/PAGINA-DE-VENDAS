@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando... Bate-Controle Elite</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        /* Ajuste da imagem para brilhar no fundo escuro */
+        .logo-img {
+            width: 180px; /* Aumentei um pouco para dar destaque */
+            height: auto;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 20px rgba(255, 107, 0, 0.5));
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 5px 0;
+            font-weight: 900;
+        }
+
+        span { color: #ff6b00; }
+
+        .loader-bar {
+            width: 250px;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, #ff6b00, #00d576);
+            border-radius: 10px;
+            animation: load 2.5s ease-in-out forwards;
+        }
+
+        .status-text {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 15px;
+            font-weight: 600;
+            height: 20px; /* Reserva espaço para o texto não pular */
+        }
+
+        @keyframes load {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="logo.png.jpeg" alt="Bate-Controle Elite" class="logo-img">
+        <h1>Bate-<span>Controle</span></h1>
+        <p style="font-weight: 800; opacity: 0.8; letter-spacing: 2px;">ELITE 2027</p>
+    </div>
+
+    <div class="loader-bar">
+        <div class="loader-fill"></div>
+    </div>
+
+    <p class="status-text" id="status">Iniciando sistema...</p>
+
+    <script>
+        const phrases = [
+            "Contando as moedas...",
+            "Gerando relatórios...",
+            "Cobrando os caloteiros...",
+            "Tudo pronto para a saída!"
+        ];
+        let i = 0;
+        const statusEl = document.getElementById('status');
+        
+        const interval = setInterval(() => {
+            if(i < phrases.length) {
+                statusEl.innerText = phrases[i];
+                i++;
+            } else {
+                clearInterval(interval);
+            }
+        }, 700);
+
+        // Redireciona para o index.html (seu app) após o carregamento
+        setTimeout(() => {
+            window.location.href = "https://caioprogramador10-spec.github.io/BATE-CONTROLE/"; 
+        }, 3000);
+    </script>
+</body>
+</html>
