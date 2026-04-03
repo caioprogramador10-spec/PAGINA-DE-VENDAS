@@ -3,220 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bate-Controle Elite 2027 | O Sistema dos Mestres</title>
+    <title>Bate-Controle </title>
+    <link rel="stylesheet" href="style.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #ff6b00;
-            --primary-dark: #1a1a1a;
-            --success: #00d576;
-            --danger: #ff4757;
-            --bg-body: #f4f7f6;
-            --text-main: #2d3436;
-            --radius: 24px;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
-
-        /* --- HEADER --- */
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 8px solid var(--primary);
-        }
-
-        .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
-        .hero h1 span { color: var(--primary); }
-        .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; margin: 0 auto 35px; font-weight: 400; }
-
-        /* --- VIDEO --- */
-        .video-container {
-            max-width: 750px;
-            margin: 0 auto 40px;
-            position: relative;
-            padding-bottom: 42.25%;
-            height: 0;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 0 40px rgba(255, 107, 0, 0.3);
-            border: 4px solid var(--primary);
-            background: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; border: 0;
-        }
-
-        /* --- SEÇÃO DE DORES --- */
-        .pain-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
-        .pain-section h2 { font-size: 2rem; margin-bottom: 15px; font-weight: 900; text-transform: uppercase; }
-        .pain-section .subtitle { color: var(--danger); font-weight: 700; margin-bottom: 50px; display: block; }
-        
-        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .pain-card { background: #fff; padding: 35px; border-radius: var(--radius); box-shadow: var(--shadow); border-bottom: 6px solid var(--danger); text-align: left; }
-        .pain-card h4 { color: #1a1a1a; margin-bottom: 10px; font-weight: 900; font-size: 1.2rem; }
-
-        /* --- BENEFÍCIOS --- */
-        .benefits { background: #1a1a1a; color: #fff; padding: 80px 20px; }
-        .benefits-container { max-width: 1000px; margin: 0 auto; }
-        .benefit-item { display: flex; align-items: center; margin-bottom: 50px; gap: 25px; }
-        .benefit-icon { background: var(--primary); color: white; min-width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
-        .benefit-text h3 { font-weight: 900; margin-bottom: 8px; color: var(--primary); text-transform: uppercase; }
-        .benefit-text p { opacity: 0.8; font-size: 1.1rem; }
-
-        /* --- PREÇO E CTA --- */
-        .cta-section { padding: 100px 20px; text-align: center; background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); }
-        .offer-box { 
-            background: #fff; max-width: 500px; margin: 0 auto; padding: 60px 40px; 
-            border-radius: 40px; border: 4px solid var(--primary); box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-            position: relative;
-        }
-        .badge { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--success); color: white; padding: 10px 25px; border-radius: 50px; font-weight: 900; font-size: 0.9rem; letter-spacing: 1px; }
-        
-        .price-old { text-decoration: line-through; color: #888; font-size: 1.2rem; }
-        .price { font-size: 4.5rem; font-weight: 900; color: #1a1a1a; margin: 10px 0; line-height: 1; }
-        .price small { font-size: 1.2rem; color: #555; }
-
-        .btn-elite {
-            display: inline-block; width: 100%; padding: 25px; background: var(--primary); 
-            color: white; text-decoration: none; border-radius: 20px; font-weight: 900; 
-            font-size: 1.5rem; box-shadow: 0 8px 0 #d35400; transition: 0.2s; text-transform: uppercase;
-        }
-        .btn-elite:hover { transform: translateY(-3px); box-shadow: 0 11px 0 #d35400; }
-        .btn-elite:active { transform: translateY(5px); box-shadow: 0 2px 0 #d35400; }
-
-        /* --- WHATSAPP --- */
-        .zap-btn {
-            position: fixed; bottom: 30px; right: 30px; background: #25d366; 
-            color: white; padding: 18px 30px; border-radius: 50px; font-weight: 900;
-            text-decoration: none; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 100;
-            display: flex; align-items: center; gap: 10px;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; }
-            .benefit-item { flex-direction: column; text-align: center; }
-            .video-container { margin: 0 10px 35px; border-radius: 15px; padding-bottom: 56%; }
-            .price { font-size: 3.5rem; }
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
 </head>
-<body>
+<body style="width: 100%; overflow-x: hidden;">
 
-    <section class="hero">
-        <h1>Para de <span>perder dinheiro</span> com a sua própria Turma! 🤡</h1>
-        <p>Chega de cobrar componente no "grito" e tirar dinheiro do bolso para pagar material. Assuma o controle profissional agora.</p>
-        
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/kIPsVN7L91U" 
-                title="Bate-Controle Elite 2027" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <a href="splash.html" class="btn-elite">QUERO O CONTROLE AGORA</a>
-        <p style="margin-top: 15px; font-size: 0.9rem; color: #00d576; font-weight: 800;">🔥 TESTE GRÁTIS POR 15 DIAS - RISCO ZERO</p>
-    </section>
-
-    <section class="pain-section">
-        <h2>O Carnaval chega e seu caixa está no vermelho?</h2>
-        <span class="subtitle">Gerir 50 pessoas no papel é o caminho mais rápido para o prejuízo.</span>
-        
-        <div class="pain-grid">
-            <div class="pain-card">
-                <h4>🛑 Calote Silencioso</h4>
-                <p>O componente "esquece" de pagar, você não tem registro e, no final, o rombo da fantasia sobra pra você.</p>
-            </div>
-            <div class="pain-card">
-                <h4>🛍️ Bagunça nas Compras</h4>
-                <p>Você gasta com tecido, arame e lanche, mas perde as contas de quanto investiu e quem ficou devendo o rateio.</p>
-            </div>
-            <div class="pain-card">
-                <h4>⏳ Escravo do Cadastro</h4>
-                <p>O valor da fantasia mudou? Perde horas editando um por um no sistema. Tempo é dinheiro, e você está jogando fora.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits">
-        <div class="benefits-container">
-            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 60px; font-weight: 900;">A SOLUÇÃO DOS <span style="color:var(--primary)">MESTRES DA GESTÃO:</span></h2>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">🚀</div>
-                <div class="benefit-text">
-                    <h3>Edição Anual Instantânea</h3>
-                    <p>Mude o valor da fantasia de TODOS os componentes com apenas um clique. Atualize a turma inteira para a nova temporada em segundos.</p>
-                </div>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">🛒</div>
-                <div class="benefit-text">
-                    <h3>Gestão de Compras & Materiais</h3>
-                    <p>Novo módulo exclusivo! Registre cada centavo gasto com fornecedores e saiba exatamente quanto a turma já investiu na confecção.</p>
-                </div>
-            </div>
-            
-            <div class="benefit-item">
-                <div class="benefit-icon">💸</div>
-                <div class="benefit-text">
-                    <h3>Cobrança "Mão de Ferro"</h3>
-                    <p>O sistema identifica quem vence amanhã e gera a mensagem perfeita de WhatsApp. Profissionalismo que impõe respeito e garante o pagamento.</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <div class="benefit-icon">👑</div>
-                <div class="benefit-text">
-                    <h3>Transparência Total</h3>
-                    <p>Gere relatórios PDF profissionais. Mostre para a turma para onde o dinheiro está indo e acabe com as desconfianças.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="offer-box">
-            <div class="badge">OFERTA DE LANÇAMENTO 2027</div>
-            <h2>PLANO ELITE</h2>
-            <div style="margin: 20px 0;">
-                <span class="price-old">De R$ 119,90</span>
-                <div class="price"><small>R$</small> 39,90</div>
-                <p style="font-weight: 700; color: var(--success);">MENSAL</p>
-            </div>
-
-            <ul style="text-align: left; list-style: none; margin-bottom: 35px; font-weight: 600; font-size: 1.1rem;">
-                <li>✅ <strong>NOVO:</strong> Atualização de Valores em Massa</li>
-                <li>✅ <strong>NOVO:</strong> Registro de Compras & Materiais</li>
-                <li>✅ Relatórios PDF e Prestação de Contas</li>
-                <li>✅ Cobrança Automática via WhatsApp</li>
-                <li>✅ Cadastro Ilimitado de Componentes</li>
-                <li>✅ <strong>Garantia Total: 15 Dias Grátis</strong></li>
-            </ul>
-
-            <a href="splash.html" class="btn-elite">GARANTIR MINHA TURMA</a>
-        </div>
-    </section>
-
-    <footer style="padding: 60px 20px; text-align: center; background: #1a1a1a; color: white;">
-        <p style="font-weight: 800; color: var(--primary);">BATE-CONTROLE ELITE 2027</p>
-        <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 10px;">O sistema oficial de quem não aceita calote.</p>
-    </footer>
-
-    <a href="https://api.whatsapp.com/send?phone=5521985072328&text=Caio, quero o Bate-Controle Elite!" class="zap-btn">
-        <span>Fale conosco agora</span>
+    <a href="https://api.whatsapp.com/send?phone=5521985072328&text=Olá! Preciso de suporte com o Bate Controle." 
+       target="_blank" 
+       style="position: fixed !important; bottom: 20px !important; right: 20px !important; background-color: #25d366 !important; color: white !important; text-decoration: none !important; padding: 12px 20px !important; border-radius: 50px !important; display: flex !important; align-items: center !important; gap: 8px !important; font-weight: bold !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; z-index: 999999 !important; font-family: sans-serif !important; font-size: 14px !important; visibility: visible !important; opacity: 1 !important;">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 25px !important; height: 25px !important; display: block !important;" alt="Zap">
+       <span>Suporte</span>
     </a>
 
+    <section id="login-container">
+        <div class="login-box">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="logo.png.png" alt="Logo Bate-Controle Elite" style="width: 190px; height: auto; display: inline-block;">
+            </div>
+
+            <h2 id="login-titulo">BATE-LOGIN </h2>
+            <p id="login-subtitulo">Acesse para gerenciar sua turma</p>
+            <div id="login-inputs">
+                <div id="login-form-fields" style="display: flex; flex-direction: column; gap: 10px;">
+                    <input type="text" id="usuario" placeholder="Nome de usuário">
+                    <input type="password" id="senha" placeholder="Sua senha">
+                    
+                    <input type="text" id="whatsapp_lider" placeholder="WhatsApp do Líder (Ex: 21988887777)" style="display: none;">
+
+                    <div id="secao-indicacao-cadastro" style="display: none;">
+                        <p>FOI INDICADO POR OUTRA TURMA? </p>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="foi_indicado" value="nao" checked onclick="document.getElementById('wrapper-id-indicador').style.display='none'"> Não
+                            </label>
+                            <label>
+                                <input type="radio" name="foi_indicado" value="sim" onclick="document.getElementById('wrapper-id-indicador').style.display='block'"> Sim
+                            </label>
+                        </div>
+                        <div id="wrapper-id-indicador" style="display: none;">
+                            <input type="text" id="id_indicador" placeholder="ID da Turma que indicou" style="margin-bottom: 0; border: 2px solid var(--primary);">
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="btn-login-entrar" onclick="executarAcaoPrincipal()" style="margin-top: 10px;">Entrar</button>
+                <p class="toggle-login" style="margin-top: 15px; font-size: 0.9rem;">
+                    <span id="texto-alternar">Não tem conta?</span> 
+                    <a href="javascript:void(0)" onclick="alternarTelaLogin()" id="link-alternar" style="color: var(--primary); font-weight: bold; text-decoration: none;">Cadastrar Turma</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="painel-dono" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index:20000; padding:10px; overflow-y:auto;">
+        <div class="glass-section" style="width: 100%; max-width: 500px; margin: 20px auto; border-top: 5px solid var(--primary); background: white; border-radius: 20px; padding: 15px;">
+            <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 10px;">💎 GESTÃO MASTER</h2>
+            <p style="text-align: center; font-size: 0.8rem; color: #666; margin-bottom: 20px;">Controle de Pagamentos e Turmas</p>
+            
+            <div id="estatisticas-master" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px;">
+                <div style="background: #f8f9fa; padding: 10px; border-radius: 15px; text-align: center; border: 1px solid #ddd;">
+                    <span style="font-size: 0.6rem; color: #888; font-weight: bold; text-transform: uppercase;">Turmas</span>
+                    <h3 id="master-total-turmas" style="margin: 5px 0 0; color: var(--primary); font-size: 1.1rem;">0</h3>
+                </div>
+                <div style="background: #f8f9fa; padding: 10px; border-radius: 15px; text-align: center; border: 1px solid #ddd;">
+                    <span style="font-size: 0.6rem; color: #888; font-weight: bold; text-transform: uppercase;">Previsão</span>
+                    <h3 id="master-faturamento" style="margin: 5px 0 0; color: var(--success); font-size: 1.1rem;">R$ 0</h3>
+                </div>
+            </div>
+
+            <input type="text" id="busca-admin" placeholder="🔍 Filtrar turmas..." onkeyup="renderizarUsuariosAdmin()" style="margin-bottom:10px; width:100%; padding:10px; border-radius: 10px; border: 1px solid #eee;">
+
+            <div id="lista-usuarios-admin" style="margin-bottom: 20px; max-height: 350px; overflow-y: auto; border: 1px solid #eee; border-radius: 10px; padding: 5px;"></div>
+
+            <button onclick="fecharPainelDono()" class="btn-system" style="background: #333; color: white; padding: 15px; border-radius: 12px; width: 100%; font-weight: bold; border: none; cursor: pointer;">Fechar Painel Master</button>
+        </div>
+    </div>
+
+    <div id="bloqueio-assinatura" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#121212; z-index:25000; color:white; text-align:center; padding:20px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h1 style="font-size: 3rem;">🤡</h1>
+        <h2 style="color: var(--primary); font-weight: 900; margin-bottom: 10px;">ACESSO BLOQUEADO</h2>
+        <p id="mensagem-bloqueio" style="font-size: 1rem; line-height: 1.5; max-width: 280px; margin-bottom: 30px;">
+            Sua mensalidade venceu! Para continuar organizando sua turma e evitar calotes, realize o pagamento.
+        </p>
+        
+        <div style="background: #222; padding: 20px; border-radius: 20px; border: 2px dashed var(--primary); width: 100%; max-width: 280px; margin-bottom: 20px;">
+            <p style="font-size: 0.8rem; text-transform: uppercase; color: #aaa; margin-bottom: 5px;">Valor da Mensalidade</p>
+            <h2 style="color: var(--success); margin-bottom: 15px;">R$ 39,90</h2>
+            
+            <button onclick="pagarComCartao()" style="background: #009ee3; color: white; border: none; padding: 12px; border-radius: 10px; width: 100%; font-weight: bold; cursor: pointer; margin-bottom: 15px;">
+                💳 PAGAR COM CARTÃO
+            </button>
+
+            <p style="font-size: 0.9rem; margin-bottom: 5px;">Chave PIX (E-mail):</p>
+            <strong style="color: var(--primary); font-size: 0.9rem;">caio.programador10@gmail.com</strong>
+        </div>
+
+        <button onclick="fazerLogout()" class="btn-system" style="margin-top: 20px; background: transparent; border: 1px solid #444; color: #888; padding: 10px 20px; border-radius: 10px;">Sair da Conta</button>
+    </div>
+
+    <div id="app-content" style="display: none; width: 100%;">
+        <header style="background: var(--bg-body); padding: 15px 0; box-shadow: var(--shadow-up); margin-bottom: 25px; width: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 850px; margin: 0 auto; width: 100%; padding: 0 15px;">
+                <h1 style="margin:0; font-size: 1.1rem; color: var(--primary); font-weight: 900;">BATE-CONTROLE </h1>
+                <button onclick="fazerLogout()" class="btn-acao-grande" style="font-size: 0.7rem !important; width: auto; padding: 0 10px !important; height: 35px;">Sair</button>
+            </div>
+        </header>
+
+        <main style="width: 100%; padding: 10px;">
+            <section id="resumo-financeiro">
+                <div class="card-resumo"><span>Componentes</span><h4 id="total-componentes">0</h4></div>
+                <div class="card-resumo"><span>Meta Final</span><h4 id="meta-total">R$ 0</h4></div>
+                <div class="card-resumo" style="border-top-color: var(--success);"><span>Total Pago</span><h4 id="total-pago" style="color: var(--success);">R$ 0</h4></div>
+                <div class="card-resumo" style="border-top-color: var(--danger);"><span>Restante</span><h4 id="total-devedor" style="color: var(--danger);">R$ 0</h4></div>
+            </section>
+
+            <section class="glass-section">
+                <h3 style="color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; font-size: 1.1rem;">📊 Custos Extras</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                    <input type="text" id="descExtra" placeholder="Ex: Ônibus" style="flex: 1; min-width: 150px; margin-bottom: 0;">
+                    <input type="number" id="valorExtra" placeholder="R$" style="width: 80px; margin-bottom: 0;">
+                    <button onclick="adicionarCustoExtra()" class="btn-acao-grande" style="background: var(--primary); color: white; flex-shrink: 0;">+</button>
+                </div>
+                <ul id="listaExtras" style="padding:0; margin:0; list-style: none;"></ul>
+                <div style="margin-top:15px; padding:15px; border-radius: 12px; background: var(--bg-body); box-shadow: var(--shadow-down); font-weight:bold; color:var(--primary); font-size: 0.85rem; text-align: center;">
+                    + R$ <span id="valorExtraPorPessoa">0,00</span> por pessoa
+                </div>
+            </section>
+
+            <section class="glass-section">
+                <h3 style="color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; font-size: 1.1rem;">🛍️ Compras & Materiais</h3>
+                <div style="background: #fff5f5; border: 1px solid #feb2b2; padding: 10px; border-radius: 10px; margin-bottom: 15px; text-align: center;">
+                    <span style="font-size: 0.7rem; color: #c53030; font-weight: bold; text-transform: uppercase;">Total Investido</span>
+                    <h3 style="margin: 5px 0 0; color: var(--danger); font-size: 1.2rem;">R$ <span id="total-gastos-manuais">0,00</span></h3>
+                </div>
+                <div style="display: grid; gap: 8px; margin-bottom: 15px;">
+                    <input type="text" id="gasto-item" placeholder="O que comprou?" style="margin-bottom: 0;">
+                    <div style="display: flex; gap: 8px;">
+                        <input type="number" id="gasto-valor" placeholder="R$" style="width: 90px; margin-bottom: 0;">
+                        <input type="text" id="gasto-delegado" placeholder="Quem?" style="flex: 1; margin-bottom: 0;">
+                    </div>
+                    <button onclick="adicionarGastoManual()" class="btn-acao-grande" style="background: var(--primary-dark); color: white; width: 100%; border-radius: 12px; height: 50px; font-size: 0.8rem !important;">REGISTRAR COMPRA 📝</button>
+                </div>
+                <div id="lista-gastos-manuais"></div>
+            </section>
+
+            <section class="glass-section">
+                <h3 style="color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; font-size: 1.1rem;">👤 Adicionar Componente</h3>
+                <div style="display: grid; gap: 8px;">
+                    <input type="text" id="nome" placeholder="Nome Completo" style="margin-bottom: 0;">
+                    <div style="display: flex; gap: 8px;">
+                        <input type="number" id="valorTotal" placeholder="R$ Fantasia" style="flex: 1; margin-bottom: 0;">
+                        <input type="text" id="telefone" placeholder="WhatsApp" style="flex: 1; margin-bottom: 0;">
+                    </div>
+                    <div style="background: var(--bg-body); padding: 10px; border-radius: 14px; box-shadow: var(--shadow-down); display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 0.7rem; color: var(--text-main); font-weight: bold;">Vencimento:</span>
+                        <input type="date" id="dataVencimento" style="border:none; background:transparent; padding:0; box-shadow: none; margin-bottom: 0; font-size: 0.9rem; flex: 1;">
+                    </div>
+                    <button id="btn-cadastrar" onclick="adicionarComponente()">Salvar no Banco</button>
+                </div>
+            </section>
+
+            <div style="margin-bottom: 25px;">
+                <input type="text" id="buscaNome" placeholder="🔍 Buscar por nome..." onkeyup="atualizarTabela()">
+                <div style="display: flex; gap: 5px;">
+                    <button onclick="filtrar('todos')" class="btn-acao-grande" style="flex:1; font-size: 0.7rem !important; height: 40px;">Todos</button>
+                    <button onclick="filtrar('atrasado')" class="btn-acao-grande" style="flex:1; color: var(--danger); font-size: 0.7rem !important; height: 40px;">Atrasados</button>
+                    <button onclick="filtrar('em-dia')" class="btn-acao-grande" style="flex:1; color: var(--success); font-size: 0.7rem !important; height: 40px;">Em Dia</button>
+                </div>
+            </div>
+
+            <button onclick="avisarVencimentosAmanha()" class="btn-avisar-vencimentos" style="font-size: 0.8rem; padding: 15px; margin-bottom: 10px;">
+                📢 AVISAR VENCIMENTOS DE AMANHÃ
+            </button>
+
+            <button onclick="editarValorGlobal()" class="btn-avisar-vencimentos" style="font-size: 0.8rem; padding: 15px; background: var(--primary-dark); margin-bottom: 20px;">
+                ✏️ ATUALIZAR VALOR DE TODOS (ANUAL)
+            </button>
+
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Total</th> 
+                            <th>Pago</th>  
+                            <th>Saldo</th>
+                            <th style="text-align: center;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpoTabela"></tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px; display: grid; gap: 10px; padding-bottom: 40px;">
+                <button onclick="gerarRelatorioPDF()" id="btn-login-entrar-pdf" style="background: var(--primary-dark); font-weight: bold; color: white; border: none; padding: 18px; border-radius: 12px; cursor: pointer; font-size: 0.9rem;">📄 Baixar Relatório PDF</button>
+                <button onclick="zerarTemporada()" id="btn-login-entrar-zerar" style="background: #fff; color: var(--danger); box-shadow: var(--shadow-up); border: 1px solid #f9d6d6; padding: 18px; border-radius: 12px; cursor: pointer; font-size: 0.8rem;">🔄 Zerar Temporada</button>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="pagamentos.js"></script> 
 </body>
 </html>
